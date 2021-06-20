@@ -11,48 +11,54 @@
         </ul>
         <form class="mt-10"
           @submit.prevent="addHero">
-          <input class="border rounded" v-model="newHero" placeholder="Type Hero name Here"> <!-- trim for removing whitespace-->
+          <input
+          class="border rounded" v-model="newHero" 
+          placeholder="Type Hero name Here"
+          ref="newHeroRef"
+          />
+
           <button 
                 class="border rounded bg-gradient-to-r from-red-700
                        to-pink-500 text-white ml-3" 
-          type="submit">Add Hero</button>
+                type="submit">Add Hero</button>
         </form>
       </div>
 </template>
 
 <script>
+import { onMounted, computed, ref } from 'vue';
 export default {
-      data(){
-        return {
-            newHero: "",
-      
-            dcHeros: [
+  setup(){
+    const newHeroRef = ref ("");
+    const newHero = ref("");
+    const dcHeros = ref ([
                 { name: "SuperGirl"},
                 { name: "Flash"},
                 { name: "Batman"},
                 { name: "Arrow"},
                 { name: "Superman"},
-            ],
-        }
-  },
+      ]);
+      onMounted(() => {
+        newHeroRef.value.focus();
+      });
 
-    computed:{
-    herosCount(){
-      return this.dcHeros.length;
-    }
+      const herosCount = computed({
+        get: () => dcHeros.value.length,
+      });
 
-  },
-  methods:{
-    addHero(){
-      //alert("asdf");
-      if(this.newHero !== ""){
-        this.dcHeros.unshift({ name: this.newHero });
-        this.newHero="";
+      //console.log(dcHeros);
+      function remove(index){
+        dcHeros.value = dcHeros.value.filter((hero,i) => i != index);
       }
-    },
-    remove(index){
-      this.dcHeros = this.dcHeros.filter((hero,i) => i != index);
-    },
+      
+     function addHero(){
+      //alert("asdf");
+      if(newHero.value !== ""){
+        dcHeros.value.unshift({ name: newHero.value });
+        newHero.value="";
+      }
+    }
+      return {dcHeros, newHero, remove, addHero, newHeroRef, herosCount}
   },
 
 }
