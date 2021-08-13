@@ -16,7 +16,7 @@
 <script>
 import firebase from "../utilities/firebase";
 export default {
-    props: {isLoggedIn: { type: Boolean, required: true }},
+    //props: {isLoggedIn: { type: Boolean, required: true }},
     data(){
         return {
             list:[
@@ -28,7 +28,8 @@ export default {
                 { title: "Calculator", to: "/calculator" },
                 { title: "Resueable Modal", to: "/reuseable-modal" },
                 { title: "Chat", to: "/chat" },
-            ]
+            ],
+            //store: this.$store.state;
         };
     }, 
     methods: {
@@ -38,6 +39,11 @@ export default {
                 }).catch((error) => {
                     console.log(error);
                 });
+        }
+    },
+    computed: {
+        isLoggedIn(){
+            return this.$store.state.isLoggedIn;
         }
     }
 
