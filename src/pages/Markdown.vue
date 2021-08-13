@@ -4,7 +4,10 @@
             Markdown App</h1>
         <section class="flex m-auto w-10/12 h-screen">
         <article class="w-1/2 border">
-            <textarea class="w-full h-full" :value="text"
+            <textarea 
+            ref="markdownTextArea"
+            class="w-full h-full" 
+            :value="text"
             @input="update"></textarea>
         </article>
         <article class="w-1/2 border bg-gray-100" v-html="markedText"></article>
@@ -14,13 +17,15 @@
 
 <script>
 import marked from "marked";
-import debounce from "../utilities/mixins/debounce"
+import useDebounce from "../utilities/composition/useDebounce";
 export default {
     // mixins called in second first component priority
-    mixins: [debounce],
+    //mixins: [debounce],
+
     data(){
         return {
-            text: "",
+            text: "**this is markdown app**",
+            debounce: "",
         }
     },
     computed: {
@@ -33,9 +38,13 @@ export default {
             const taks = () => (this.text = e.target.value);
             this.debounce(taks, 500);
         },
-    }
+    },
 
-}
+    mounted() {
+        this.debounce = useDebounce();
+        this.$refs.markdownTextArea.focus();
+    },
+};
 </script>
 
 <style>
