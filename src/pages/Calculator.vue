@@ -9,7 +9,7 @@
             </div>
           <div class="grid grid-cols-4 gap-1">
               <button @click="pressed('1')" class="p-2 w-10 h-10 border rounded shadow">1</button>
-              <button @click="pressed('2')" class="p-2 w-10 h-10 border rounded shadow">2</button>
+              <button  @click="pressed('2')" class="p-2 w-10 h-10 border rounded shadow">2</button>
               <button @click="pressed('3')" class="p-2 w-10 h-10 border rounded shadow">3</button>
               <button @click="pressed('+')" class="p-2 w-10 h-10 border rounded shadow">+</button>
               <button @click="pressed('4')" class="p-2 w-10 h-10 border rounded shadow">4</button>
