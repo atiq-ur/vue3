@@ -8,6 +8,7 @@ import Calculator from "./pages/Calculator"
 import ReuseableModal from "./pages/ReuseableModal"
 import Chat from "./pages/Chat"
 import store from "./store/index"
+import UserCrud from './pages/UserCrud'
 
 const routes = [
     { path: '/', component: Home },
@@ -25,6 +26,7 @@ const routes = [
         //     //console.log(store.state.isLoggedIn);
         // }
     },
+    { path: '/user-crud', component: UserCrud },
 ]
 
 const router = createRouter({

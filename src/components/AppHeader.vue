@@ -33,6 +33,7 @@ export default {
                 { title: "Calculator", to: "/calculator" },
                 { title: "Resueable Modal", to: "/reuseable-modal" },
                 { title: "Chat", to: "/chat" },
+                { title: "User Crud", to: "/user-crud" },
             ],
             //store: this.$store.state;
         };
