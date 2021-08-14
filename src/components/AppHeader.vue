@@ -3,11 +3,16 @@
     class="w-full bg-gradient-to-r 
     from-blue-800 to-blue-600 
     text-white px-4 py-3">
-    <router-link v-for="item in list" :key="item.to" 
-    class="mx-2" :to="item.to">{{ item.title }}</router-link>
+    <router-link 
+    v-for="item in list" 
+    :key="item.to" 
+    class="mx-2" 
+    :to="item.to">
+    {{ item.title }}
+    </router-link>
 
     <button v-if="isLoggedIn" class="mx-2" @click="logout">Logout</button>
-    <button v-else class="mx-2" @click="$emit('open-login-modal')">Login</button>
+    <button v-else class="mx-2" @click="openLogin">Login</button>
     
 
 </nav>
@@ -39,6 +44,10 @@ export default {
                 }).catch((error) => {
                     console.log(error);
                 });
+        },
+        openLogin(){
+            // console.log('login Modal is clicked');
+            this.$store.commit("setLoginModal", true);
         }
     },
     computed: {

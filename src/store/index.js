@@ -5,15 +5,20 @@ const store = createStore({
     state() {
         return {
             isLoggedIn: false,
-            authUser: {}
+            authUser: {},
+            isLoginOpen: false,
         }
     },
     mutations: {
-        setIsLoggedIn(state) {
-            state.isLoggedIn = true;
+        setIsLoggedIn(state, payload) {
+            state.isLoggedIn = payload;
         },
         setAuthuser(state, payload) {
             state.authUser = payload;
+        },
+        setLoginModal(state, payload) {
+            //console.log(payload);
+            state.isLoginOpen = payload;
         },
     }
 })
