@@ -34,6 +34,7 @@ export default {
                 { title: "Resueable Modal", to: "/reuseable-modal" },
                 { title: "Chat", to: "/chat" },
                 { title: "User Crud", to: "/user-crud" },
+                { title: "Tensorflow", to: "/tensorflow" },
             ],
             //store: this.$store.state;
         };
