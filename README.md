@@ -119,6 +119,12 @@ Login Modal
 
 ---
 
-### Customize configuration
+## Enjoy :) !!!
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+---
+
+#### Follow me
+
+<p align="center">
+<a href="https://atiq.softscholar.com">Md. Atiqur Rahman</a>
+</p>
