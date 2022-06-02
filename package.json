@@ -13,7 +13,7 @@
     "@tensorflow/tfjs-backend-webgl": "^3.8.0",
     "@tensorflow/tfjs-converter": "^3.8.0",
     "@tensorflow/tfjs-core": "^3.8.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^3.6.5",
     "firebase": "^8.6.8",
     "marked": "^2.0.7",
